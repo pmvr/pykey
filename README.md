@@ -7,7 +7,7 @@ It uses the HID interface for communication.
 
 # Security
 
-This projects consists of 3 parts:
+This project consists of 3 parts:
   * A secure booloader based on [Adafruit nRF52 Bootloader](https://github.com/adafruit/Adafruit_nRF52_Bootloader), which only accepts signed UF2 files via USB MSC.
   * [CircuitPython](https://github.com/adafruit/circuitpython) 5, where the usage of the Arm CryptoCell-310 for cryptographic computations has been added to the nrf port as a module.
   * The implementation of FIDO2 and U2F in Python.
