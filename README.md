@@ -15,4 +15,3 @@ This projects consists of 3 parts:
 # License
 
 [MIT](https://opensource.org/licenses/MIT)
-Python based implementaton of FIDO2 and U2F on a NRF52840 Dongle (PCA10059)
