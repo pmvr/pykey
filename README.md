@@ -16,7 +16,7 @@ The bootloader has been modified such that DFU and OTA is not possible. The only
 
 UF2 files consits of blocks of 512 bytes, with a payload of 476 bytes of data of the hex file. Since only a maximum of 256 bytes are used, the remaining free bytes are used to transmit a 2048 bit RSA signature of the image. The image is discarded if the signature is invalid.
 
-Part of the bootloader is also the device's ec private key, which is used in the MakeCredential command (FIDO2) and register command (U2F) to sign the response. Note, that the device's attestation certificate is issued on the relying public key.
+Part of the bootloader is also the device's ec private key, which is used in the MakeCredential command (FIDO2) and register command (U2F) to sign the response. Note, that the device's attestation certificate `fido2_u2f/cert.der` is issued on the relying public key. Of course, it is important to replace this key and the according certificate, if this project is deployed.
 
 **TODO**: For final release access port protection ([nRF52 APPPROTECT](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52832.ps.v1.1%2Fdif.html&cp=2_2_0_15_1&anchor=concept_udr_mns_1s)) must be activated.
 
@@ -41,6 +41,8 @@ The implementation is done in Python.
 # Setup and Building
 
 ## Bootloader
+The device's private key is stored in `src/secec.c`. Note, a fake value has been commited to this repository.
+
 Change to the directory `bootloader/`, execute
 
 `make BOARD=pca10059 genhex`
