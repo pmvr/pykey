@@ -4,3 +4,6 @@
 [submodule "bootloader/lib/tinyusb"]
 	path = bootloader/lib/tinyusb
 	url = https://github.com/hathach/tinyusb/
+[submodule "adapted-circuitpython"]
+	path = adapted-circuitpython
+	url = git@github.com:pmvr/adapted-circuitpython.git
