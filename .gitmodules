@@ -1,3 +1,6 @@
 [submodule "bootloader/lib/nrfx"]
 	path = bootloader/lib/nrfx
 	url = https://github.com/NordicSemiconductor/nrfx
+[submodule "bootloader/lib/tinyusb"]
+	path = bootloader/lib/tinyusb
+	url = https://github.com/hathach/tinyusb/
