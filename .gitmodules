@@ -1,0 +1,3 @@
+[submodule "bootloader/lib/nrfx"]
+	path = bootloader/lib/nrfx
+	url = https://github.com/NordicSemiconductor/nrfx/
