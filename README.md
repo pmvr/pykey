@@ -8,7 +8,7 @@ This project consists of 3 parts:
   * A secure booloader based on [Adafruit nRF52 Bootloader](https://github.com/adafruit/Adafruit_nRF52_Bootloader), which only accepts signed UF2 files via USB MSC.
   * [CircuitPython](https://github.com/adafruit/circuitpython) 5, where the usage of the Arm CryptoCell-310 for cryptographic computations has been added to the nrf port as a module.
   * The implementation of FIDO2 and U2F in Python.
-  
+
 # Security
 ## Bootloader
 The bootloader has been modified such that DFU and OTA is not possible. The only way to upload new firmware is via [UF2](https://github.com/Microsoft/uf2).
@@ -30,17 +30,25 @@ The implementation is done in Python.
  * The security level is 128 bit.
  * The supported public key algorithm is ECDSA with secp256r1 only.
  * The PublicKeyCredentialDescriptors / key handles are encrypted with AES-128-CBC and a random IV. Authenticity is provided by an HMAC-SHA256.
+ * For random numbers the true random number generator of
  * Resident keys are stored on the internal flash.
 
 # Setup and Building
 
 ## Bootloader
-Change to the directory bootloader/. Then execute:
-...
+Change to the directory `bootloader/`, execute
+
+`make BOARD=pca10059 genhex`
+
+then merge with the soft device
+
+`hexmerge.py _build-pca10059/pca10059_bootloader-0.3.2-dirty-nosd.hex ./lib/softdevice/s140_nrf52_6.1.1/s140_nrf52_6.1.1_softdevice.hex -o pca10059_bootloader.hex`
+
+`hexmerge` can be found in [IntelHex](https://pypi.org/project/IntelHex/).
 
 In order to put the bootloader onto the NRF52840 Dongle this [OpenOCD guidance](https://www.rototron.info/circuitpython-nrf52840-dongle-openocd-pi-tutorial/) is very helpfull. Otherwise one can use a debugging probe such as Segger J-link.
 
-## Modified CircuitPython 
+## Modified CircuitPython
 
 ## FIDO2/U2F Implementation
 
