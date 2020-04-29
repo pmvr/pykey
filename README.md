@@ -74,6 +74,12 @@ which generates a C header file `fido-drive.h`, which as to be copied to `circui
 For debugging and developing it is helpfull to use the REPL console. Therefore, the USB CDC must be activated in `mpconfigboard.mk`.
 
 # Conformance
+PyKey passed FIDO Conformance Tools tests for FIDO2 and U2F:
+
+![](https://github.com/pmvr/pykey/blob/master/FIDO2-Conformance-Tools-Passed.png)
+
+![](https://github.com/pmvr/pykey/blob/master/U2F-Conformance-Tools-Passed.png)
+
 
 # License
 
