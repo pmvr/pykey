@@ -76,9 +76,9 @@ For debugging and developing it is helpfull to use the REPL console. Therefore, 
 # Conformance
 PyKey passed FIDO Conformance Tools tests for FIDO2 and U2F:
 
-![](https://github.com/pmvr/pykey/blob/master/FIDO2-Conformance-Tools-Passed.png)
+![](https://github.com/pmvr/pykey/raw/master/FIDO2-Conformance-Tools-Passed.png)
 
-![](https://github.com/pmvr/pykey/blob/master/U2F-Conformance-Tools-Passed.png)
+![](https://github.com/pmvr/pykey/raw/master/U2F-Conformance-Tools-Passed.png)
 
 
 # License
