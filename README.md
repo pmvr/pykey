@@ -60,7 +60,13 @@ The [original project](https://github.com/adafruit/circuitpython) gives a genera
 
 `make BOARD=pca10059 -j17 USER_C_MODULES=../../../modules`
 
-The modules directory contains one module only `cc310` it holds the implementation of the cryptographic libraries.
+The modules directory contains one module only `cc310`. It holds the implementation of the cryptographic libraries.
+
+The build target is directory `build-pca10059/`. It holds the compiled firmware `firmware.uf2`. This firmware needs to be signed. A python script can do the job
+
+`python sign_uf2.py build-pca10059/firmware.uf2 -o build-pca10059/signed_firmware.uf2 -r rsa_parameter.txt`
+
+The parameter `rsa_parameter.txt` is a plain text file that holds the RSA parameters modulus and signing/secret key in hexadecimal.
 
 ## FIDO2/U2F Implementation
 Optionally, `mpy-cross` can be used to precompile the python source code.
